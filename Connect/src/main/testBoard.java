@@ -1,13 +1,27 @@
 package main;
 
+import java.util.Random;
 import java.util.Scanner;
+import main.CallArray;
+import main.AI;
 
 public class testBoard {
+	public static String [] slots = {"1","2","3","4","5","6","7","8","9"};
+
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		String [] slots = {"1","2","3","4","5","6","7","8","9"};        
+//		 TODO Auto-generated method stub
+		        
 	        String user; 
+	        
+	        for (int j = 0; j < slots.length; j++) {
+        		System.out.print(slots[j] + " ");
+        		if(slots[j].equals("3") || slots[j].equals("6")) {	
+        			System.out.println();
+        		}
+	        }
+	        System.out.println();
+        		
 	        System.out.println(" Your turn, where would you like to place your coin? ");
 	     
 			Scanner input = new Scanner(System.in);
@@ -22,8 +36,37 @@ public class testBoard {
         		System.out.print(slots[i] + " ");
         		if(slots[i].equals("3") || slots[i].equals("6")) {	
         			System.out.println();
+        			
         		}
         }
+	        
+	        AI();
+	}
+	public static void AI() 
+	{
+		String [] arr = {"1","2","3","4","5","6","7","8","9"};
+		Random r=new Random();
+		int randomNumber = r.nextInt(arr.length);
+		System.out.println(" The AI's turn... ");
+		System.out.println(" ");
+	
+	
+	for(int x = 0; x < slots.length; ++x) {
+		if(arr[randomNumber].equals(slots[x])) {
+			slots[x] = "O";
+		}
+	}
+    for (int i = 0; i < slots.length; i++) {
+		System.out.print(slots[i] + " ");
+		if(slots[i].equals("3") || slots[i].equals("6")) {	
+			System.out.println();
+		}
+		
 	}
 
+
 }
+}
+
+
+

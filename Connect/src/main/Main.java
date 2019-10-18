@@ -23,5 +23,5 @@ public class Main
     	{
     		System.out.println("Cant read? ");
     	}
-    }  0 
+    }  
 }
