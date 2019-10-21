@@ -9,7 +9,7 @@ public class testBoard {
 	public static String [] slots = {"1","2","3","4","5","6","7","8","9"};
 
 
-	public static void main(String[] args) {
+	public static void User(String[] args) {
 //		 TODO Auto-generated method stub
 		        
 	        String user; 
@@ -40,33 +40,40 @@ public class testBoard {
         		}
         }
 	        
-	        AI();
+	        AI(slots);
 	}
-	public static void AI() 
+	public static void AI(String slots[]) 
 	{
-		String [] arr = {"1","2","3","4","5","6","7","8","9"};
-		Random r=new Random();
-		int randomNumber = r.nextInt(arr.length);
 		System.out.println(" The AI's turn... ");
 		System.out.println(" ");
-	
-	
-	for(int x = 0; x < slots.length; ++x) {
-		if(arr[randomNumber].equals(slots[x])) {
-			slots[x] = "O";
+		String [] arr = {"1","2","3","4","5","6","7","8","9"};
+		boolean computer = true;
+		Random r=new Random();
+		int randomNumber = r.nextInt(arr.length);
+		while(computer = true)
+		if (slots[randomNumber].equals("O") || slots[randomNumber].equals("X"))
+		{
+		computer = true;
 		}
-	}
-    for (int i = 0; i < slots.length; i++) {
-		System.out.print(slots[i] + " ");
-		if(slots[i].equals("3") || slots[i].equals("6")) {	
-			System.out.println();
+		else 
+		{
+			for(int x = 0; x < slots.length; ++x) {
+				if(arr[randomNumber].equals(slots[x])) {
+					slots[x] = "O";
+		computer = false;
 		}
-		
-	}
-
-
+		}
+			 for (int i = 0; i < slots.length; i++) {
+					System.out.print(slots[i] + " ");
+					if(slots[i].equals("3") || slots[i].equals("6")) {	
+						System.out.println();
+	  }			
+	}			
+  }
 }
 }
+	
+
 
 
 
